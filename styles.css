@@ -1,0 +1,69 @@
+/* ==== Pro-Cons Lists ==== */
+.pro-list, .con-list {
+  padding-left: 20px;
+  list-style-type: none;
+  margin: 0;
+}
+
+.pro-list::before, .con-list::before {
+  content: attr(data-title);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.pro-list li::before {
+  content: '✔️ ';
+  color: green;
+}
+
+.con-list li::before {
+  content: '❌ ';
+  color: red;
+}
+
+/* ==== Borders Around Lists or Blocks ==== */
+.border-box {
+  border: 2px solid var(--text-normal);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ==== Numbered Lists ==== */
+.numbered-list li {
+  counter-increment: list-counter;
+  position: relative;
+}
+
+.numbered-list li::before {
+  content: counters(list-counter, ".") " ";
+  position: absolute;
+  left: -2em;
+}
+
+/* ==== Kanban Columns ==== */
+.kanban-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.kanban-column {
+  width: 30%;
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-column h2 {
+  text-align: center;
+}
+
+.kanban-task {
+  background-color: var(--background-primary);
+  border: 1px solid var(--text-muted);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+}
